@@ -9,6 +9,7 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Java', link: '/java/list' },
+      { text: 'note', link: '/note' },
       { text: 'Examples', link: '/example/markdown-examples' }
     ],
 
