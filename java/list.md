@@ -17,19 +17,28 @@
   - 继承自HashMap, 并维护一条双向链表 `即 Node 添加了属性 before 和 after`
 
 - ConcurrentHashMap
-  - 锁一个数组槽位, 而不是整个MAP
-  - 锁的选择
+  - 锁一个数组槽位, 而不是整个MAP `锁分段`
+    - 锁定当前链表/红黑树的首节点
+  - 加锁方式
+    - 数组位首节点为null ,CAS添加首节点
+    - synchronized(首节点)
 
 ### set
 
 - HashSet
+  - 内部持有一个 HashMap 对象
 - LinkedHashSet
+  - 内部持有一个 LinkedHashMap 对象
 - TreeSet
+  - 底层使用红黑树
+  - 可自定义排序方式
 
 ### list
 
 - ArrayList
+  - 底层使用数组, `查询快, 增删慢` `增删需要copy数组`
 - LinkedList
+  - 底层使用双向链表  `增删快, 查询慢`
 
 ## 多线程
 
