@@ -46,10 +46,10 @@
 - 线程安全三大特性
   - 原子性 : 一个或多个操作, 要么全部执行成功, 要么不执行
     - synchronized
-    - final
+    - ~~final~~
   - 有序性 : 按照代码顺序先后执行
     - synchronized
-    - volatile : `禁止指令重排序`, 保证`读`与`写`的执行顺序
+    - ~~volatile : `禁止指令重排序`, 保证`读`与`写`的执行顺序~~
   - 可见性 : 一个线程修改的状态对另一个线程是可见的
     - synchronized : `内存屏障`
     - volatile : 基于`内存屏障` -> 写入后添加`store barrier`,读取前添加 `load barrier`
