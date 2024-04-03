@@ -116,13 +116,16 @@
 
 :::
 
-- Monitor : 使用重量级锁时, `mark word`重量级锁指针指向对应的Monitor
-  - 由`ObjectMonitor`实现
-  - 内部组成
-    - _waitSet : 等待被唤醒的队列
-    - _entryList : 阻塞队列
-    - _owner : 持有者
-    - _count : 计数器, 重入一次 +1, 释放一次 -1
+::: details Monitor : 使用重量级锁时, `mark word`重量级锁指针指向对应的Monitor
+
+- 由`ObjectMonitor`实现
+- 内部组成
+  - _waitSet : 等待被唤醒的队列
+  - _entryList : 阻塞队列
+  - _owner : 持有者
+  - _count : 计数器, 重入一次 +1, 释放一次 -1
+
+:::
 
 :::
 
