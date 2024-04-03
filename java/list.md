@@ -4,6 +4,8 @@
 
 ### map
 
+::: details HashMap
+
 - HashMap
   - `hashcode` 与 `equals`
     - equals一致, hashcode 必定一致 ; hashcode 一致, equals 不一定一致
@@ -22,6 +24,8 @@
   - 加锁方式
     - 数组位首节点为null ,CAS添加首节点
     - synchronized(首节点)
+
+:::
 
 ### set
 
