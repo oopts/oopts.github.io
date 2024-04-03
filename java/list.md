@@ -2,7 +2,7 @@
 
 ## 集合
 
-### map
+### MAP
 
 #### HashMap
 
@@ -26,7 +26,7 @@
   - 数组位首节点为null ,CAS添加首节点
   - synchronized(首节点)
 
-### set
+### SET
 
 #### HashSet
 
@@ -41,7 +41,7 @@
 - 底层使用红黑树
 - 可自定义排序方式
 
-### list
+### LIST
 
 #### ArrayList
 
