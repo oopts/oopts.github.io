@@ -130,11 +130,15 @@
 
 :::
 
-::: details ReentrantLock
+::: details AQS
 
 :::
 
-::: details AQS 与 JUC
+::: details  JUC
+
+:::
+
+::: details ReentrantLock
 
 :::
 
