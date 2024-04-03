@@ -114,6 +114,8 @@
   - 实例变量 : 存放类的属性信息数据
   - 填充对象 : 为了字节对齐
 
+:::
+
 ::: details Monitor : 使用重量级锁时, `mark word`重量级锁指针指向对应的Monitor
 
 - 由`ObjectMonitor`实现
@@ -128,6 +130,7 @@
 ::: details ReentrantLock
 
 :::
+
 ::: details AQS 与 JUC
 
 :::
