@@ -53,11 +53,11 @@
 
 ## 多线程
 
-#### 线程状态
+### 线程状态
 
 `new` `Running` `waitting` `blocked` `terminated`
 
-#### 线程安全三大特性
+### 线程安全三大特性
 
 - 原子性 : 一个或多个操作, 要么全部执行成功, 要么不执行
   - synchronized
@@ -69,9 +69,9 @@
   - synchronized : `内存屏障`
   - volatile : 基于`内存屏障` -> 写入后添加`store barrier`,读取前添加 `load barrier`
 
-#### Synchronized
+### Synchronized
 
-##### 锁升级
+#### 锁升级
 
 - 无锁
 - 偏向锁
@@ -85,16 +85,20 @@
   - CAS获取锁时,自旋次数达到一定的阈值, 或发现其他线程在竞争此锁, 升级为`重量级锁`
   - 使用操作系统提供的互斥量(mutex)来实现锁, 会进行`用户态`和`内核态`的切换, 会进行线程的`阻塞`和`唤醒`
 
-##### 锁粗化 : 根据逃逸分析将多个锁对象合并为一个锁
+#### 锁粗化 
 
-##### 锁消除 : 根据逃逸分析, 去除不存在资源共享的场景的锁
+根据逃逸分析将多个锁对象合并为一个锁
 
-##### 重量级锁与轻量级锁
+#### 锁消除
+
+根据逃逸分析, 去除不存在资源共享的场景的锁
+
+#### 重量级锁与轻量级锁
 
 - 重量级 :   不自旋, 不消耗CPU ; 线程会阻塞,响应时间慢;  追求吞吐量  /同步块执行时间长
 - 轻量级锁 : 自旋,   会消耗CPU ; 线程不阻塞,相应世家快;  追求响应时间/同步代码执行时间短
 
-##### 实例对象
+#### 实例对象
 
 - 对象头
   - Mark Word
@@ -103,7 +107,9 @@
 - 实例变量 : 存放类的属性信息数据
 - 填充对象 : 为了字节对齐
 
-##### details Monitor : 使用重量级锁时, `mark word`重量级锁指针指向对应的Monitor
+#### Monitor
+
+使用重量级锁时, `mark word`重量级锁指针指向对应的Monitor
 
 - 由`ObjectMonitor`实现
 - 内部组成
@@ -112,29 +118,27 @@
   - _owner : 持有者
   - _count : 计数器, 重入一次 +1, 释放一次 -1
 
-#### AQS
+### CAS
 
-##### 底层 : 处理器指令集支持 compareAndSet
-
-##### CAS
+### AQS
 
 ##### 核心对象
 
 - `volatile int state`
-  - `> 0` 锁已被占有
+  - `> 0` 锁 已被占有
 - `FIFO` Node等待队列
 
 ##### Condition
 
-#### JUC
+### JUC
 
-#### ReentrantLock
+### ReentrantLock
 
-#### ThreadPool
+### ThreadPool
 
-#### ThreadLocal
+### ThreadLocal
 
-#### CompleteFutureTask
+### CompleteFutureTask
 
 ## NIO && Reactor
 
