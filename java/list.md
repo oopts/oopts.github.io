@@ -4,7 +4,7 @@
 
 ### map
 
-::: details HashMap
+#### HashMap
 
 - `hashcode` 与 `equals`
   - equals一致, hashcode 必定一致 ; hashcode 一致, equals 不一定一致
@@ -14,15 +14,11 @@
   - eg: 存储一万条数据 `new HashMap((10000 / 负载因子) + 1)`
   - 每次扩容, 负载容量 * 2
 
-:::
-
-::: details LinkedHashMap
+#### LinkedHashMap
 
 - 继承自HashMap, 并维护一条双向链表 `即 Node 添加了属性 before 和 after`
   
-:::
-
-::: details ConcurrentHashMap
+#### ConcurrentHashMap
 
 - 锁一个数组槽位, 而不是整个MAP `锁分段`
   - 锁定当前链表/红黑树的首节点
@@ -30,49 +26,38 @@
   - 数组位首节点为null ,CAS添加首节点
   - synchronized(首节点)
 
-:::
-
 ### set
 
-::: details HashSet
+#### HashSet
 
 - 内部持有一个 HashMap 对象
 
-:::
-
-::: details LinkedHashSet
+#### LinkedHashSet
 
 - 内部持有一个 LinkedHashMap 对象
 
-:::
-
-::: details TreeSet
+#### TreeSet
 
 - 底层使用红黑树
 - 可自定义排序方式
-:::
 
 ### list
 
-::: details ArrayList
+#### ArrayList
 
 - 底层使用数组, `查询快, 增删慢` `增删需要copy数组`
 
-  :::
-::: details LinkedList
+#### LinkedList
 
 - 底层使用双向链表  `增删快, 查询慢`
 
-  :::
-
 ## 多线程
 
-::: details 线程状态
+#### 线程状态
+
 `new` `Running` `waitting` `blocked` `terminated`
 
-:::
-
-::: details 线程安全三大特性
+#### 线程安全三大特性
 
 - 原子性 : 一个或多个操作, 要么全部执行成功, 要么不执行
   - synchronized
@@ -84,9 +69,7 @@
   - synchronized : `内存屏障`
   - volatile : 基于`内存屏障` -> 写入后添加`store barrier`,读取前添加 `load barrier`
 
-:::
-
-::: details Synchronized
+#### Synchronized
 
 **锁升级**
 
@@ -128,31 +111,29 @@
   - _owner : 持有者
   - _count : 计数器, 重入一次 +1, 释放一次 -1
 
-:::
+#### AQS
 
-::: details AQS
+**底层** : 处理器指令集支持 compareAndSet
 
-:::
+**CAS**
 
-::: details  JUC
+**核心对象**
 
-:::
+- `volatile int state`
+  - `> 0` 锁已被占有
+- `FIFO` 等待队列
 
-::: details ReentrantLock
+**Condition**
 
-:::
+#### JUC
 
-::: details ThreadPool
+#### ReentrantLock
 
-:::
+#### ThreadPool
 
-::: details ThreadLocal
+#### ThreadLocal
 
-:::
-
-::: details CompleteFutureTask
-
-:::
+#### CompleteFutureTask
 
 ## NIO && Reactor
 
