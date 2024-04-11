@@ -156,6 +156,14 @@
 
 ### ReentrantLock
 
+- 公平锁 & 非公平锁
+- 可重入
+- 可中断 `lockInterrupitly() 可被打断, 抛出 InterruptedException`
+- 锁超时 `tryLock(超时时间)`
+- 条件变量 `condition`
+  - await()
+  - singal()
+
 ### JUC
 
 ### ThreadPool
