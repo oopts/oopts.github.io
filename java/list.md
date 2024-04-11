@@ -55,7 +55,9 @@
 
 ### 线程状态
 
-`new` `Running` `waitting` `blocked` `terminated`
+- java.lang.Thread.State
+
+  `NEW` `RUNNABLE` `BLOCKED` `WAITING` `TIMED_WAITING` `TERMINATED`
 
 ### 线程安全三大特性
 
@@ -133,21 +135,28 @@
 - volatile Node tail; `同步队列尾节点`
 
 - 非公平锁 & 公平锁
-  - 非公平锁 : 先抢锁, 失败入等待队列, 成功则拥有该锁
-  - 公平锁 : 加入等待队列
+  - 非公平锁 : 先抢锁, 失败入同步队列, 成功则拥有该锁
+  - 公平锁 : 加入同步队列
 
 #### Condition
 
+- 拥有一个阻塞队列
+
 ##### 等待
+
+- Condition#await() == Object#wait()
+- Condition#awaitUninterruptibly()
+- Condition#await(time, unit)
+- ...
 
 ##### 唤醒
 
 - Condition#signal `≈` Object#notify
 - Condition#signalAll `=` Object#notifyAll
 
-### JUC
-
 ### ReentrantLock
+
+### JUC
 
 ### ThreadPool
 
